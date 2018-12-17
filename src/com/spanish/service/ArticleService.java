@@ -8,5 +8,8 @@ public interface ArticleService {
 
     List<Article> findAllArticles();
 
+    void addArticle(Article article);
+
+    Integer getMaxArticleId();
 
 }

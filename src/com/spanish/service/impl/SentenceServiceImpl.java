@@ -22,7 +22,6 @@ public class SentenceServiceImpl implements SentenceService {
 
     @Override
     public void addSentence(Sentence sentence) {
-        SentenceDao sentenceDao = new SentenceDaoImpl();
         sentenceDao.addSentence(sentence);
     }
 

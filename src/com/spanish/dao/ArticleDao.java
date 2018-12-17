@@ -11,5 +11,9 @@ public interface ArticleDao {
 
     List<Article> findAllArticles();
 
+    void addArticle(Article article);
+
+    Integer getMaxAritcleId();
+
 
 }

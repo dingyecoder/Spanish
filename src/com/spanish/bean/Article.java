@@ -5,11 +5,30 @@ import java.util.Date;
 public class Article {
     private int id;
     private String title;
-    private String content;
+    private String contentHtml;
+    private String contentText;
     private Date initTime;
     private Date lastModifyTime;
     private String publisher;
     private String author;
+
+    public String getContentHtml() {
+        return contentHtml;
+    }
+
+    public void setContentHtml(String contentHtml) {
+        this.contentHtml = contentHtml;
+    }
+
+    public String getContentText() {
+        return contentText;
+    }
+
+    public void setContentText(String contentText) {
+        this.contentText = contentText;
+    }
+
+
 
     public int getId() {
         return id;
@@ -25,14 +44,6 @@ public class Article {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public Date getInitTime() {
@@ -72,7 +83,8 @@ public class Article {
         return "Article{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
+                ", contentHtml='" + contentHtml + '\'' +
+                ", contentText='" + contentText + '\'' +
                 ", initTime=" + initTime +
                 ", lastModifyTime=" + lastModifyTime +
                 ", publisher='" + publisher + '\'' +

@@ -12,12 +12,21 @@ public class ArticleServiceImpl implements ArticleService {
 
     private ArticleDao articleDao = new ArticleDaoImpl();
 
-    public List<Article> findAllArticles(){
+    public List<Article> findAllArticles() {
         List<Article> articleList = new ArrayList<>();
         articleList = articleDao.findAllArticles();
         return articleList;
     }
 
+    @Override
+    public void addArticle(Article article) {
+        articleDao.addArticle(article);
+    }
+
+    @Override
+    public Integer getMaxArticleId() {
+        return articleDao.getMaxAritcleId();
+    }
 
 
 }
