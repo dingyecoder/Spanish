@@ -40,7 +40,7 @@ public class ArticleDaoImpl implements ArticleDao {
 
     @Override
     public void addArticle(Article article) {
-        String sql = "insert into t_article(id,title,content_html,content_text,inittime,lastmodifytime,publisher,author)" +
+        String sql = "insert into t_article(id,title,contentHtml,contentText,inittime,lastmodifytime,publisher,author)" +
                 "values(?,?,?,?,?,?,?,?)";
         try {
             runner.update(sql, article.getId(), article.getTitle(), article.getContentHtml(), article.getContentText(), article.getInitTime(), article.getLastModifyTime(), article.getPublisher(), article.getAuthor());

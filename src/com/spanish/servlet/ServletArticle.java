@@ -16,11 +16,12 @@ import java.util.List;
 
 
 public class ServletArticle extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)  {
         doGet(request,response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)  {
+        doCharacter(request,response);
         String methodName = request.getParameter("method");
         System.out.println(methodName);
         Method method = null;
@@ -31,6 +32,18 @@ public class ServletArticle extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void doCharacter(HttpServletRequest request,HttpServletResponse response){
+        try {
+            request.setCharacterEncoding("UTF-8");
+            response.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html;charset=UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            System.out.println("不能处理字符乱码问题");
+            e.printStackTrace();
+        }
+
     }
 
 
