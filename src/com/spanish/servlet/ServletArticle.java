@@ -78,9 +78,21 @@ public class ServletArticle extends HttpServlet {
     }
 
     protected void findAllArticles(HttpServletRequest request,HttpServletResponse response){
-
         ArticleService articleService = new ArticleServiceImpl();
         List<Article> articleList  = articleService.findAllArticles();
         System.out.println(articleList);
+        if(null != articleList){
+            request.setAttribute("articles",articleList);
+            try {
+                request.getRequestDispatcher("/listArticle.jsp").forward(request,response);
+            } catch (ServletException e) {
+                System.out.println("异常： 没有找到listArticle.jsp页面");
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            System.out.println("findAllArticles失败...");
+        }
     }
 }

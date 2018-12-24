@@ -13,8 +13,7 @@ public class ArticleServiceImpl implements ArticleService {
     private ArticleDao articleDao = new ArticleDaoImpl();
 
     public List<Article> findAllArticles() {
-        List<Article> articleList = new ArrayList<>();
-        articleList = articleDao.findAllArticles();
+        List<Article> articleList = articleDao.findAllArticles();
         return articleList;
     }
 

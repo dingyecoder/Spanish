@@ -28,7 +28,7 @@ public class ArticleDaoImpl implements ArticleDao {
 
     @Override
     public List<Article> findAllArticles() {
-        String sql = "select * from t_article";
+        String sql = "select * from t_article t order by t.lastmodifytime desc";
         try {
             return runner.query(sql, new BeanListHandler<Article>(Article.class));
         } catch (SQLException e) {
