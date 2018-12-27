@@ -23,5 +23,15 @@
         <servlet-name>servletSenntence</servlet-name>
         <url-pattern>/servletSentence</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ServletUser</servlet-name>
+        <servlet-class>com.spanish.servlet.ServletUser</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ServletUser</servlet-name>
+        <url-pattern>/servletUser</url-pattern>
+    </servlet-mapping>
 
 </web-app>

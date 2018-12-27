@@ -3,7 +3,6 @@ package com.spanish.execute;
 import com.spanish.bean.Article;
 import com.spanish.dao.ArticleDao;
 import com.spanish.dao.impl.ArticleDaoImpl;
-import com.spanish.utils.DataSourceUtils;
 import org.junit.Test;
 
 import java.util.List;
