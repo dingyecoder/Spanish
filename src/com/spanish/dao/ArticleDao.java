@@ -15,5 +15,8 @@ public interface ArticleDao {
 
     Integer getMaxAritcleId();
 
+    void editArticleById(Article article);
+
+    void deleteArticleById(Integer articleId);
 
 }

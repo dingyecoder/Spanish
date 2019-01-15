@@ -5,7 +5,6 @@ import com.spanish.dao.ArticleDao;
 import com.spanish.dao.impl.ArticleDaoImpl;
 import com.spanish.service.ArticleService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleServiceImpl implements ArticleService {
@@ -25,6 +24,21 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Integer getMaxArticleId() {
         return articleDao.getMaxAritcleId();
+    }
+
+    @Override
+    public Article getArticleById(String articleId) {
+        return articleDao.findArticleById(articleId);
+    }
+
+    @Override
+    public void editArticleById(Article article) {
+        articleDao.editArticleById(article);
+    }
+
+    @Override
+    public void deleteArticleById(Integer articleId) {
+        articleDao.deleteArticleById(articleId);
     }
 
 

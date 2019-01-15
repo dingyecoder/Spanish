@@ -34,4 +34,14 @@
         <url-pattern>/servletUser</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ServletComment</servlet-name>
+        <servlet-class>com.spanish.servlet.ServletComment</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletComment</servlet-name>
+        <url-pattern>/servletComment</url-pattern>
+    </servlet-mapping>
+
 </web-app>

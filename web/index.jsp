@@ -11,8 +11,13 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+      <a href="${pageContext.request.contextPath}/servletUser?method=findAllUsers">用户管理</a>
+      <br>
 
-  <a >ddddd</a>
+      <a href="${pageContext.request.contextPath}/servletArticle?method=findAllArticles">文章管理</a>
+      <br>
+
+
+
   </body>
 </html>

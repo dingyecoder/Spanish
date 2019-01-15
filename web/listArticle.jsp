@@ -14,6 +14,7 @@
 </head>
 <body>
 
+    <a href="${pageContext.request.contextPath}/servletArticle?method=addArticle">添加文章</a>
 
     <table border="1" align="center">
         <tr>
@@ -22,6 +23,10 @@
             <td>发表人</td>
             <td>最后一次修改时间</td>
             <td>文章内容</td>
+            <td>评论</td>
+            <td>修改</td>
+            <td>删除</td>
+
         </tr>
         <c:forEach var="article" items="${articles}">
             <tr>
@@ -39,6 +44,18 @@
                 </td>
                 <td>
                         ${article.contentHtml}
+                </td>
+
+                <td>
+                    <a href="${pageContext.request.contextPath}/servletComment?method=getAllCommentByArticleId&articleId=${article.id}">查看评论</a>
+                </td>
+
+                <td>
+                        <a href="${pageContext.request.contextPath}/servletArticle?method=editArticle&articleId=${article.id}" >修改</a>
+                </td>
+
+                <td>
+                    <a href="${pageContext.request.contextPath}/servletArticle?method=deleteArticleById&articleId=${article.id}">删除</a>
                 </td>
 
             </tr>

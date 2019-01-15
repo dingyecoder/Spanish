@@ -61,4 +61,28 @@ public class ArticleDaoImpl implements ArticleDao {
         }
         return  0;
     }
+
+    @Override
+    public void editArticleById(Article article) {
+        String sql = "update t_article t set t.title=?,t.contentHtml=?,t.contentText=? where t.id = ?";
+        try {
+            runner.update(sql,article.getTitle(),article.getContentHtml(),article.getContentText(),article.getId());
+        } catch (SQLException e) {
+            System.out.println("文章修改失败");
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteArticleById(Integer articleId) {
+        String sql = "delete from t_article where id = ?";
+        try {
+            runner.update(sql,articleId);
+        } catch (SQLException e) {
+            System.out.println("article dao delete article failed");
+            e.printStackTrace();
+        }
+    }
+
+
 }

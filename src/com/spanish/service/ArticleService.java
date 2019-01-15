@@ -12,4 +12,10 @@ public interface ArticleService {
 
     Integer getMaxArticleId();
 
+    Article getArticleById(String articleId);
+
+    void editArticleById(Article article);
+
+    void deleteArticleById(Integer articleId);
+
 }
