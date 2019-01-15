@@ -32,7 +32,7 @@ public class CommentDaoImpl implements CommentDao {
     @Override
     public List<Comment> getAllCommentByArticleId(int articleId) {
 
-        String sql = "select * from t_comment where articleId = ? order by createTime desc";
+        String sql = "select * from t_comment where articleId = ? order by createTime asc";
         try {
             return runner.query(sql,new BeanListHandler<>(Comment.class),articleId);
         } catch (SQLException e) {

@@ -2,8 +2,8 @@
 <c3p0-config>
     <default-config>
         <property name="user">root</property>
-        <property name="password">abcdefg</property>
+        <property name="password">dy19930121!</property>
         <property name="driverClass">com.mysql.jdbc.Driver</property>
-        <property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/spanish</property>
+        <property name="jdbcUrl">jdbc:mysql://119.29.155.191:3306/spanish</property>
     </default-config>
 </c3p0-config>

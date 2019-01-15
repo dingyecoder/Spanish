@@ -1,8 +1,11 @@
 package com.spanish.servlet;
 
 import com.spanish.bean.Article;
+import com.spanish.bean.Comment;
 import com.spanish.service.ArticleService;
+import com.spanish.service.CommentService;
 import com.spanish.service.impl.ArticleServiceImpl;
+import com.spanish.service.impl.CommentServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +35,29 @@ public class ServletArticle extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void getArticleById(HttpServletRequest request,HttpServletResponse response){
+        ArticleService articleService = new ArticleServiceImpl();
+        String articleId = request.getParameter("articleId");
+        Article article = articleService.getArticleById(articleId);
+
+        request.setAttribute("article",article);
+
+        CommentService commentService = new CommentServiceImpl();
+        List<Comment> commentList = commentService.getAllCommentByArticleId(Integer.valueOf(articleId));
+        System.out.println(commentList);
+        request.setAttribute("comments",commentList);
+
+        try {
+            request.getRequestDispatcher("/articleDetail.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private void doCharacter(HttpServletRequest request,HttpServletResponse response){

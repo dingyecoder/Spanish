@@ -7,7 +7,7 @@ public class Comment {
     private int parentId;
     private String commentText;
     private String toUserId;
-    private  Integer toUserName;
+    private String toUserName;
     private String userName;
     private Date createTime;
 
@@ -43,11 +43,11 @@ public class Comment {
         this.toUserId = toUserId;
     }
 
-    public Integer getToUserName() {
+    public String getToUserName() {
         return toUserName;
     }
 
-    public void setToUserName(Integer toUserName) {
+    public void setToUserName(String toUserName) {
         this.toUserName = toUserName;
     }
 
@@ -74,7 +74,7 @@ public class Comment {
                 ", parentId=" + parentId +
                 ", commentText='" + commentText + '\'' +
                 ", toUserId='" + toUserId + '\'' +
-                ", toUserName=" + toUserName +
+                ", toUserName='" + toUserName + '\'' +
                 ", userName='" + userName + '\'' +
                 ", createTime=" + createTime +
                 '}';

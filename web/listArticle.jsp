@@ -31,7 +31,7 @@
         <c:forEach var="article" items="${articles}">
             <tr>
                 <td>
-                        ${article.title}
+                     <a href="${pageContext.request.contextPath}/servletArticle?method=getArticleById&articleId=${article.id}" >${article.title}</a>
                 </td>
                 <td>
                         ${article.initTime}
